@@ -1,21 +1,13 @@
-const nextJest = require("next/jest.js");
 const { pathsToModuleNameMapper } = require("ts-jest");
 const { compilerOptions } = require("./tsconfig.json");
 
 const paths = compilerOptions.paths ? compilerOptions.paths : {};
 
-const createJestConfig = nextJest({
-  dir: "./",
-});
-
 const exclusions = [
   "<rootDir>/src/constants",
-  "<rootDir>/src/pages",
   "<rootDir>/src/styles",
   "<rootDir>/src/services/index.ts",
   "<rootDir>/src/useCases/index.ts",
-  "<rootDir>/src/middleware.ts",
-  "locales/index.ts",
   "config.ts",
   "configs.ts",
   "style.ts",
@@ -52,4 +44,4 @@ const config = {
   },
 };
 
-module.exports = createJestConfig(config);
+module.exports = config;

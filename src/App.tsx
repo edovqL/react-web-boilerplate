@@ -1,25 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+import { CacheProvider } from "@emotion/react";
+import {
+  QueryClient,
+  type QueryClientConfig,
+  QueryClientProvider,
+} from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { ReyStyledProvider } from "rey-mix";
+
+import { createEmotionCache } from "./helpers/cache";
+
+const clientSideEmotionCache = createEmotionCache();
+
+const queryClientOptions: QueryClientConfig = {
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      refetchOnReconnect: false,
+      retry: false,
+    },
+  },
+};
 
 function App() {
+  const [queryClient] = useState(() => new QueryClient(queryClientOptions));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CacheProvider value={clientSideEmotionCache}>
+      <ReyStyledProvider>
+        <QueryClientProvider client={queryClient}>
+          <ReactQueryDevtools initialIsOpen={false} />
+        </QueryClientProvider>
+      </ReyStyledProvider>
+    </CacheProvider>
   );
 }
 

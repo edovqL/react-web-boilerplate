@@ -2,8 +2,6 @@ node_modules
 __generated__
 build
 dist
-.next
-next-env.d.ts
 jest
 coverage
 scripts

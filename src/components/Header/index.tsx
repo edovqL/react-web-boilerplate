@@ -1,12 +1,10 @@
 import React from "react";
 
-import Head from "next/head";
-
 import type { HeaderProps } from "@components/Header/types";
 
 const Header: React.FC<HeaderProps> = ({ title, children }) => {
   return (
-    <Head>
+    <head>
       <title>{title}</title>
 
       <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -17,7 +15,7 @@ const Header: React.FC<HeaderProps> = ({ title, children }) => {
       />
 
       {children}
-    </Head>
+    </head>
   );
 };
 

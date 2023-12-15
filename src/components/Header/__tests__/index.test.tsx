@@ -2,8 +2,8 @@ import React from "react";
 
 import { render } from "@testing-library/react";
 
-import Header from "@components/Header";
-import type { HeaderProps } from "@components/Header/types";
+import Header from "../";
+import type { HeaderProps } from "../types";
 
 describe("Test components: Header", () => {
   let props: HeaderProps;

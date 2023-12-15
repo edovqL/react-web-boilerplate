@@ -1,3 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test components: Header Snapshot 1`] = `<div />`;
+exports[`Test components: Header Snapshot 1`] = `
+<div>
+  <head>
+    <title />
+    <meta
+      content="IE=edge,chrome=1"
+      http-equiv="X-UA-Compatible"
+    />
+    <meta
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+      name="viewport"
+    />
+  </head>
+</div>
+`;
