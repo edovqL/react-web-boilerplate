@@ -1,26 +1,53 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
+    "noEmit": true,
+    "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "preserve",
+    "incremental": true,
+    "paths": {
+      "@assets/*": ["./public/assets/*"],
+      "@__mocks__/*": ["./src/__mocks__/*"],
+      "@constants/*": ["./src/constants/*"],
+      "@constants": ["./src/constants"],
+      "@components/*": ["./src/components/*"],
+      "@components": ["./src/components"],
+      "@domains/*": ["./src/domains/*"],
+      "@domains": ["./src/domains"],
+      "@features/*": ["./src/features/*"],
+      "@features": ["./src/features"],
+      "@helpers/*": ["./src/helpers/*"],
+      "@helpers": ["./src/helpers"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@hooks": ["./src/hooks"],
+      "@locales/*": ["./src/locales/*"],
+      "@locales": ["./src/locales"],
+      "@services/*": ["./src/services/*"],
+      "@services": ["./src/services"],
+      "@src/*": ["./src/*"],
+      "@src": ["./src"],
+      "@stores/*": ["./src/stores/*"],
+      "@stores": ["./src/stores"],
+      "@styles/*": ["./src/styles/*"],
+      "@styles": ["./src/styles"],
+      "@useCases/*": ["./src/useCases/*"],
+      "@useCases": ["./src/useCases"]
+    }
   },
   "include": [
-    "src"
-  ]
+    "**/*.ts",
+    "**/*.tsx",
+    "commitlint.config.js",
+    "jest.config.js",
+    "newrelic.js",
+  ],
+  "exclude": ["node_modules", "coverage", "scripts", "__snapshots__"]
 }
