@@ -1,46 +1,129 @@
-# Getting Started with Create React App
+# React Web Boilerplate
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern React TypeScript boilerplate with a robust architecture and development tooling for building scalable web applications.
+
+## Features
+
+- ⚛️ **React 18** - Latest React version with all its features
+- 📦 **TypeScript** - Type safety and improved developer experience
+- 🔄 **TanStack Query** - Data fetching and state management for API requests
+- 🧰 **Zustand** - Lightweight state management solution
+- 🎨 **Material UI** - Complete design system with customizable components
+- 🔥 **Emotion** - CSS-in-JS styling solution
+- 🔍 **ESLint & Prettier** - Code quality tools
+- 🧪 **Jest & Testing Library** - Comprehensive testing suite
+- 🚀 **Husky & lint-staged** - Git hooks for code quality
+- 📊 **SonarQube** - Code quality scanning integration
+- 🔧 **Code Generation Tools** - Scripts to generate components, domains, features, and more
+- 🔥 **Firebase** - Authentication and other Firebase services
+- 📈 **New Relic** - Performance monitoring
+
+## Project Structure
+
+```
+├── components/          # Reusable UI components
+├── constants/          # Application constants
+├── domains/            # Domain models and business logic
+├── features/           # Feature modules
+├── helpers/            # Utility functions
+├── hooks/              # Custom React hooks
+├── services/           # API services and adapters
+├── stores/             # State management stores
+├── styles/             # Global styles
+├── useCases/           # Business use cases
+└── scripts/            # Code generation scripts
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (version specified in `.nvmrc`)
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/react-web-boilerplate.git
+cd react-web-boilerplate
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env.local
+```
 
 ## Available Scripts
 
-In the project directory, you can run:
+### `npm run dev`
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Runs the app in development mode at [http://localhost:3000](http://localhost:3000).
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the app for production to the `build` folder.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `npm test`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Runs tests in watch mode with Jest.
 
-### `npm run eject`
+### `npm run test:coverage`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Runs tests with coverage report.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `npm run lint`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Lints the codebase using ESLint.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### `npm run prettier`
 
-## Learn More
+Formats code using Prettier.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Code Generation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The boilerplate includes several scripts to generate code:
+
+```bash
+# Generate a new component
+npm run generate:component ComponentName
+
+# Generate a new domain
+npm run generate:domain DomainName
+
+# Generate a new feature
+npm run generate:feature FeatureName
+
+# Generate a new service
+npm run generate:service ServiceName
+
+# Generate a new store
+npm run generate:store StoreName
+
+# Generate a new use case
+npm run generate:useCase UseCaseName
+```
+
+## Testing
+
+This project uses Jest and React Testing Library for testing. Tests are located next to the files they test with the `.test.ts(x)` extension.
+
+## Commit Guidelines
+
+This project uses conventional commits for standardized commit messages. Use commitizen for guided commit messages:
+
+```bash
+git add .
+npm run commit
+```
+
+## 🙏 Acknowledgments
+
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [TanStack Query](https://tanstack.com/query/latest)
+- [Zustand](https://github.com/pmndrs/zustand)
+- [Material UI](https://mui.com/)
+- [Emotion](https://emotion.sh/)
+- [Jest](https://jestjs.io/)
